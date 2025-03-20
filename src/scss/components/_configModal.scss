@@ -1,0 +1,18 @@
+.open-modal-button {
+  padding: 10px 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.open-modal-button:hover {
+  background-color: #3a80d2;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}

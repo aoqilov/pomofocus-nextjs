@@ -5,7 +5,7 @@ import Timer from "@/components/timer";
 const HomePage = () => {
   return (
     <div>
-      <div className="wrapper__bgcolor" style={{ background: "#ba4949" }}>
+      <div className="wrapper__bgcolor">
         <Navbar />
         <Timer />
         <Notes />

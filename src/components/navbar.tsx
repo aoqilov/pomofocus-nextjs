@@ -1,7 +1,14 @@
+"use client";
 import Image from "next/image";
 import { BodyLogo, Config, Graph, Option, User } from "../../public";
+import { useState } from "react";
+import ConfigModal from "./configModal";
 
 const Navbar = () => {
+  const [isConfigOpen, setIsConfigOpen] = useState(false);
+  const openConfigModal = () => setIsConfigOpen(true);
+  const closeConfigModal = () => setIsConfigOpen(false);
+
   return (
     <nav className="navbar container">
       <div className="nav__logo">
@@ -14,7 +21,7 @@ const Navbar = () => {
             <Image src={Graph} alt="graph-icon" className="item-icon" />
             <p className="item-text">Report</p>
           </li>
-          <li className="nav__menu-item">
+          <li className="nav__menu-item" onClick={() => setIsConfigOpen(true)}>
             <Image src={Config} alt="config-icon" className="item-icon" />
             <p className="item-text">Config</p>
           </li>
@@ -27,6 +34,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      {isConfigOpen && <ConfigModal closeModal={closeConfigModal} />}
     </nav>
   );
 };
